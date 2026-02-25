@@ -34,7 +34,7 @@ const episodes = [
     id: 2,
     title: "Fe en Tiempos Difíciles",
     description: "Una conversación profunda sobre cómo mantener la esperanza cuando enfrentamos adversidades.",
-    duration: "38 min",
+    duration: "Próximamente",
     image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=800&auto=format&fit=crop",
     youtubeUrl: "#",
     spotifyUrl: "#",
@@ -44,7 +44,7 @@ const episodes = [
     id: 3,
     title: "El Propósito de Dios",
     description: "Aprende a identificar y caminar en el propósito que Dios ha diseñado para ti.",
-    duration: "52 min",
+    duration: "Próximamente",
     image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=800&auto=format&fit=crop",
     youtubeUrl: "#",
     spotifyUrl: "#",
@@ -54,7 +54,7 @@ const episodes = [
     id: 4,
     title: "Restauración Familiar",
     description: "Principios bíblicos para sanar y fortalecer los lazos familiares.",
-    duration: "41 min",
+    duration: "Próximamente",
     image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop",
     youtubeUrl: "#",
     spotifyUrl: "#",
@@ -64,7 +64,7 @@ const episodes = [
     id: 5,
     title: "Liderazgo Servicial",
     description: "El modelo de Jesús para liderar con humildad y amor.",
-    duration: "48 min",
+    duration: "Próximamente",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop",
     youtubeUrl: "#",
     spotifyUrl: "#",
@@ -190,41 +190,64 @@ export const PodcastPage = ({ setCurrentPage }: { setCurrentPage: (page: string)
       </div>
 
       {/* Episodes Row */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-xl font-medium text-white mb-4">Episodios Recientes</h3>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-white flex items-center gap-3">
+              <span className="w-8 h-1 bg-[#ffcd75] rounded-full"></span>
+              Episodios Recientes
+            </h3>
+            <p className="text-zinc-400 mt-2 ml-11">Nuevos episodios se añadirán próximamente.</p>
+          </div>
+          <div className="flex gap-2 hidden sm:flex">
+            <button className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors">
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-colors">
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
         
         <div className="relative group">
-          <div className="flex gap-4 overflow-x-auto pb-8 pt-4 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div className="flex gap-6 overflow-x-auto pb-12 pt-4 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {regularEpisodes.map((episode) => (
               <div 
                 key={episode.id} 
-                className="flex-none w-[280px] sm:w-[320px] snap-start group/card cursor-pointer"
+                className="flex-none w-[300px] sm:w-[360px] snap-start group/card cursor-pointer"
               >
-                <div className="relative aspect-video rounded-md overflow-hidden mb-3 bg-zinc-900 transition-transform duration-300 group-hover/card:scale-105 group-hover/card:shadow-xl group-hover/card:z-10">
+                <div className="relative aspect-video rounded-xl overflow-hidden mb-4 bg-zinc-900 border border-white/5 shadow-lg transition-all duration-500 group-hover/card:scale-[1.03] group-hover/card:shadow-2xl group-hover/card:border-white/20 group-hover/card:z-10">
                   <img 
                     src={episode.image} 
                     alt={episode.title}
-                    className="w-full h-full object-cover opacity-80 group-hover/card:opacity-100 transition-opacity"
+                    className="w-full h-full object-cover opacity-80 group-hover/card:opacity-100 transition-all duration-700 group-hover/card:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover/card:bg-transparent transition-colors" />
                   
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity">
-                    <div className="w-12 h-12 rounded-full bg-black/50 border border-white flex items-center justify-center backdrop-blur-sm">
-                      <Play className="w-5 h-5 text-white fill-current ml-1" />
+                  {/* Gradient Overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover/card:opacity-60 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#ffcd75]/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
+                  
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform group-hover/card:scale-100 scale-75">
+                    <div className="w-16 h-16 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur-md shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                      <Play className="w-6 h-6 text-white fill-current ml-1" />
                     </div>
                   </div>
                   
-                  <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded font-medium">
+                  {/* Duration Badge */}
+                  <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs px-2.5 py-1 rounded-md font-medium tracking-wide">
                     {episode.duration}
                   </div>
                 </div>
                 
-                <h4 className="text-white font-medium text-base line-clamp-1 group-hover/card:text-[#ffcd75] transition-colors">
-                  {episode.title}
-                </h4>
-                <p className="text-zinc-500 text-sm line-clamp-2 mt-1">
-                  {episode.description}
-                </p>
+                <div className="px-1 transition-transform duration-300 group-hover/card:translate-x-1">
+                  <h4 className="text-white font-bold text-lg leading-tight line-clamp-1 group-hover/card:text-[#ffcd75] transition-colors mb-2">
+                    {episode.title}
+                  </h4>
+                  <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2">
+                    {episode.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

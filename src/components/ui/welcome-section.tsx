@@ -54,7 +54,7 @@ export const WelcomeSection = () => {
             <div className="mt-12 mb-12 flex items-center gap-4">
               <div className="h-12 w-1 bg-gradient-to-b from-[#ffcd75] to-transparent rounded-full" />
               <div>
-                <p className="text-xl font-bold tracking-tight text-white">Pr. Nombre Apellido</p>
+                <p className="text-xl font-bold tracking-tight text-white">Pr. Valdomiro dos Santos</p>
                 <p className="text-xs text-zinc-500 uppercase tracking-widest font-semibold mt-1">Pastor Presidente</p>
               </div>
             </div>
@@ -64,11 +64,6 @@ export const WelcomeSection = () => {
               <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-zinc-950 transition-all hover:scale-[1.02] hover:bg-zinc-200 active:scale-[0.98]">
                 Conoce a nuestro pastor
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
-              
-              <button className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10 hover:border-white/20">
-                <Calendar className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
-                Planifica tu visita
               </button>
             </div>
           </div>

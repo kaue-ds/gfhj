@@ -15,11 +15,10 @@ import {
 
 // --- MOCK MINISTRIES ---
 const MINISTRIES = [
-  { name: "Adoración", icon: Music },
-  { name: "Jóvenes", icon: Flame },
-  { name: "Familia", icon: Users },
-  { name: "Escuela Bíblica", icon: BookOpen },
-  { name: "Obra Social", icon: Heart },
+  { name: "Profetas", icon: Flame },
+  { name: "Evangelistas", icon: Users },
+  { name: "Pastores", icon: Heart },
+  { name: "Maestros", icon: BookOpen },
 ];
 
 // --- SUB-COMPONENTS ---
@@ -31,7 +30,7 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
 );
 
 // --- MAIN COMPONENT ---
-export default function HeroSection() {
+export default function HeroSection({ setCurrentPage }: { setCurrentPage?: (page: string) => void }) {
   return (
     <div className="relative w-full bg-zinc-950 text-white overflow-hidden font-sans">
       {/* 
@@ -106,7 +105,10 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="animate-fade-in delay-400 flex flex-col sm:flex-row gap-4">
-              <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-zinc-950 transition-all hover:scale-[1.02] hover:bg-zinc-200 active:scale-[0.98]">
+              <button 
+                onClick={() => setCurrentPage?.('agenda')}
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-zinc-950 transition-all hover:scale-[1.02] hover:bg-zinc-200 active:scale-[0.98]"
+              >
                 Nuestros Horarios
                 <Calendar className="w-4 h-4 transition-transform group-hover:scale-110" />
               </button>
@@ -133,7 +135,7 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <div className="text-3xl font-bold tracking-tight text-white">Próximo Culto</div>
-                    <div className="text-sm text-zinc-400">Domingo 10:00 AM</div>
+                    <div className="text-sm text-zinc-400">Domingo 11:00 AM</div>
                   </div>
                 </div>
 

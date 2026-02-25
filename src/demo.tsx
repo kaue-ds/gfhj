@@ -25,7 +25,7 @@ export default function HeroDemo() {
       
       {currentPage === 'home' && (
         <>
-          <HeroSection />
+          <HeroSection setCurrentPage={setCurrentPage} />
           <WelcomeSection />
           <AboutSection />
         </>

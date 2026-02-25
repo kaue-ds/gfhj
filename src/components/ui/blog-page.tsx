@@ -16,7 +16,7 @@ export function BlogPage({ setCurrentPage }: { setCurrentPage: (page: string) =>
       id: 'proximamente-1',
       title: 'El Poder de la Oración en Tiempos de Crisis',
       excerpt: 'Aprende cómo la oración constante puede transformar tu perspectiva y traer paz en medio de las tormentas de la vida.',
-      image: 'https://images.unsplash.com/photo-1544427920-c49ccfaf8c56?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=800&auto=format&fit=crop',
       date: 'Próximamente',
       category: 'Vida Cristiana'
     },
