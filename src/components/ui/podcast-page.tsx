@@ -220,19 +220,12 @@ export const PodcastPage = ({ setCurrentPage }: { setCurrentPage: (page: string)
                   <img 
                     src={episode.image} 
                     alt={episode.title}
-                    className="w-full h-full object-cover opacity-80 group-hover/card:opacity-100 transition-all duration-700 group-hover/card:scale-110"
+                    className="w-full h-full object-cover opacity-60 blur-sm group-hover/card:opacity-80 transition-all duration-700 group-hover/card:scale-110"
                   />
                   
                   {/* Gradient Overlays */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover/card:opacity-60 transition-opacity duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#ffcd75]/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
-                  
-                  {/* Play Button Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-all duration-500 transform group-hover/card:scale-100 scale-75">
-                    <div className="w-16 h-16 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur-md shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-                      <Play className="w-6 h-6 text-white fill-current ml-1" />
-                    </div>
-                  </div>
                   
                   {/* Duration Badge */}
                   <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs px-2.5 py-1 rounded-md font-medium tracking-wide">
