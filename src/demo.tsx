@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import HeroSection from '@/components/ui/glassmorphism-trust-hero';
 import { WelcomeSection } from '@/components/ui/welcome-section';
 import { AboutSection } from '@/components/ui/about-section';
@@ -18,9 +18,16 @@ import { Footer } from '@/components/ui/footer';
 
 export default function HeroDemo() {
   const [currentPage, setCurrentPage] = useState('home');
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo(0, 0);
+    }
+  }, [currentPage]);
 
   return (
-    <div className="w-full h-screen overflow-y-auto bg-zinc-950">
+    <div ref={scrollContainerRef} className="w-full h-screen overflow-y-auto bg-zinc-950">
       <FloatingNav currentPage={currentPage} setCurrentPage={setCurrentPage} />
       
       {currentPage === 'home' && (

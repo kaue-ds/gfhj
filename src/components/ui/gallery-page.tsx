@@ -70,7 +70,7 @@ export const GalleryPage = () => {
         <InteractiveBentoGallery
           mediaItems={mediaItems}
           title="Nuestra Galería"
-          description="Explora los momentos más destacados de nuestra comunidad. Arrastra las imágenes para reordenarlas."
+          description="Explora los momentos más destacados de nuestra comunidad."
         />
         
         <div className="container mx-auto px-4 mt-16 flex justify-center">
